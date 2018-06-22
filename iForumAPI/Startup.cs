@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using iForumAccess;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -18,6 +20,9 @@ namespace iForumAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddDbContext<ForumContext>(
+                s => s.UseSqlServer(Configuration.GetConnectionString("iForumConn")
+                ));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
