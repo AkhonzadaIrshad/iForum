@@ -26,6 +26,12 @@ namespace iForumAccess.Migrations
 
                     b.Property<int>("CityId");
 
+                    b.Property<DateTime>("DateCreated");
+
+                    b.Property<DateTime>("DateModified");
+
+                    b.Property<bool>("Deleted");
+
                     b.Property<int>("HouseNumber");
 
                     b.Property<string>("Street");
@@ -44,6 +50,12 @@ namespace iForumAccess.Migrations
 
                     b.Property<int>("Code");
 
+                    b.Property<DateTime>("DateCreated");
+
+                    b.Property<DateTime>("DateModified");
+
+                    b.Property<bool>("Deleted");
+
                     b.Property<string>("Name");
 
                     b.Property<int>("ProvinceId");
@@ -55,6 +67,24 @@ namespace iForumAccess.Migrations
                     b.ToTable("City");
                 });
 
+            modelBuilder.Entity("iForumEntities.Common.Country", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("DateCreated");
+
+                    b.Property<DateTime>("DateModified");
+
+                    b.Property<bool>("Deleted");
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Country");
+                });
+
             modelBuilder.Entity("iForumEntities.Common.Province", b =>
                 {
                     b.Property<int>("Id")
@@ -62,9 +92,19 @@ namespace iForumAccess.Migrations
 
                     b.Property<int>("Code");
 
+                    b.Property<int>("CountryId");
+
+                    b.Property<DateTime>("DateCreated");
+
+                    b.Property<DateTime>("DateModified");
+
+                    b.Property<bool>("Deleted");
+
                     b.Property<string>("Name");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CountryId");
 
                     b.ToTable("Province");
                 });
@@ -124,6 +164,14 @@ namespace iForumAccess.Migrations
                     b.HasOne("iForumEntities.Common.Province", "Province")
                         .WithMany("Cities")
                         .HasForeignKey("ProvinceId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("iForumEntities.Common.Province", b =>
+                {
+                    b.HasOne("iForumEntities.Common.Country", "Country")
+                        .WithMany("Provinces")
+                        .HasForeignKey("CountryId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

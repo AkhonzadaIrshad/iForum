@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iIdentityServerAPI", "iIden
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iForumAccess", "iForumAccess\iForumAccess.csproj", "{02153BDE-7A76-490C-805B-C637151E3611}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iInfrasturcture", "iInfrasturcture\iInfrasturcture.csproj", "{2FEE2CBE-8D92-42AA-95A9-2A1C4D74B541}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{02153BDE-7A76-490C-805B-C637151E3611}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02153BDE-7A76-490C-805B-C637151E3611}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02153BDE-7A76-490C-805B-C637151E3611}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FEE2CBE-8D92-42AA-95A9-2A1C4D74B541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FEE2CBE-8D92-42AA-95A9-2A1C4D74B541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FEE2CBE-8D92-42AA-95A9-2A1C4D74B541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FEE2CBE-8D92-42AA-95A9-2A1C4D74B541}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{3D540D2B-650A-42AD-9971-3D09E0D870ED} = {E48CD3BB-B8B6-4AA2-B0F8-49AA7AC7C446}
 		{D0378E5F-0665-49D7-BEE5-2FED0E3B82D8} = {3D540D2B-650A-42AD-9971-3D09E0D870ED}
 		{02153BDE-7A76-490C-805B-C637151E3611} = {8C4747E6-845A-4CA0-84E1-3A2D2D2BB095}
+		{2FEE2CBE-8D92-42AA-95A9-2A1C4D74B541} = {807DE5E3-07E6-43A6-99BC-25AC75606268}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {582714F9-673B-4A0E-9F75-E0E166E1AF2C}

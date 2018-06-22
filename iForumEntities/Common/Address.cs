@@ -6,10 +6,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using iForumEntities.Users;
+using iInfrastructure.Entities;
 
 namespace iForumEntities.Common
 {
-    public class Address
+    public class Address:iEntity
     {
         [Key]
         [ForeignKey("User")]
