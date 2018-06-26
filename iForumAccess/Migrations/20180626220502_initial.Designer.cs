@@ -12,9 +12,10 @@ using System;
 namespace iForumAccess.Migrations
 {
     [DbContext(typeof(ForumContext))]
-    partial class ForumContextModelSnapshot : ModelSnapshot
+    [Migration("20180626220502_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,8 +69,6 @@ namespace iForumAccess.Migrations
 
                     b.Property<string>("Description");
 
-                    b.Property<int>("PostId");
-
                     b.Property<string>("Title");
 
                     b.Property<int>("UserId");
@@ -77,8 +76,6 @@ namespace iForumAccess.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AnswerId");
-
-                    b.HasIndex("PostId");
 
                     b.HasIndex("UserId");
 
@@ -314,11 +311,6 @@ namespace iForumAccess.Migrations
                     b.HasOne("iForumEntities.Answers.Answer", "Answer")
                         .WithMany("Comments")
                         .HasForeignKey("AnswerId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("iForumEntities.Posts.Post", "Post")
-                        .WithMany("Comments")
-                        .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("iForumEntities.Users.User", "User")
